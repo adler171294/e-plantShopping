@@ -1,20 +1,23 @@
-<<<<<<< HEAD
 # e-plantShopping
-=======
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+e-plantShopping adalah aplikasi web e-commerce untuk membeli berbagai tanaman hias secara online. Proyek ini dibuat menggunakan React.js dan Redux Toolkit untuk manajemen state, serta menampilkan fitur-fitur seperti daftar produk, keranjang belanja, dan halaman About Us.
 
-Currently, two official plugins are available:
+## Fitur
+- Menampilkan daftar tanaman hias dengan gambar dan harga
+- Keranjang belanja interaktif dengan penambahan dan pengurangan jumlah item
+- Halaman About Us yang menjelaskan profil Paradise Nursery
+- Desain responsif untuk desktop dan mobile
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Struktur Proyek
+- `src/App.jsx` - komponen utama aplikasi
+- `src/App.css` - styling global
+- `src/components/AboutUs.jsx` - halaman About Us
+- `src/components/ProductList.jsx` - daftar produk
+- `src/components/CartItem.jsx` - item keranjang
+- `src/features/CartSlice.jsx` - Redux slice untuk keranjang belanja
+- `README.md` - dokumentasi proyek
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 9e303ec (Final project Paradise Nursery)
+## Instalasi
+1. Clone repositori ini:  
+```bash
+git clone https://github.com/adler171294/e-plantShopping.git

@@ -60,6 +60,41 @@ h2.title {
 
 .hero h1 { font-size: 4rem; margin-bottom: 10px; }
 
+/* Cari class ini di App.css Anda */
+.home-landing {
+  /* ... background properties tetap biarkan ... */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Membuat konten di tengah secara vertikal */
+  align-items: center;     /* Membuat konten di tengah secara horizontal */
+  text-align: center;      /* Membuat teks di dalam elemen menjadi center */
+  height: 100vh;           /* Pastikan tingginya memenuhi layar */
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Memastikan tombol ikut ke tengah */
+  max-width: 800px;        /* Membatasi lebar agar teks tidak terlalu melar */
+  padding: 20px;
+}
+
+/* Opsional: Jika judulnya masih terlihat agak ke samping, 
+   pastikan tidak ada margin-left yang tertinggal */
+.hero-content h1 {
+  font-size: 4rem;
+  margin-left: 0; 
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+
 /* --- 4. PRODUCTS PAGE --- */
 /* --- PERBAIKAN GRID PRODUK --- */
 .product-grid {

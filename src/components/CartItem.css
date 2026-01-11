@@ -1,0 +1,179 @@
+.cart-page-container {
+  padding: 40px 8%;
+  min-height: 80vh;
+}
+
+.cart-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Kolom Kiri */
+.cart-items-section {
+  flex: 2;
+}
+
+.section-title {
+  color: #2d5a27;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif;
+}
+
+.cart-item-card {
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-item-info {
+  margin-left: 25px;
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-item-cost {
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Controls */
+.cart-item-quantity-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.qty-btn {
+  background: #f0f0f0;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.qty-btn:hover { background: #e0e0e0; }
+
+.cart-item-subtotal {
+  font-weight: bold;
+  color: #2d5a27;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  color: #ff5252;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Kolom Kanan / Summary */
+.cart-summary-section {
+  flex: 1;
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  color: #555;
+}
+
+.summary-total-row {
+  border-top: 2px dashed #eee;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.total-price {
+  color: #2d5a27;
+}
+
+/* Buttons */
+.checkout-btn {
+  width: 100%;
+  background: #2d5a27;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.continue-btn {
+  width: 100%;
+  background: none;
+  border: 2px solid #2d5a27;
+  color: #2d5a27;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Desain Tombol Hapus Berbentuk Box */
+.delete-btn {
+background-color: #ff5252; /* Warna merah agar terlihat sebagai aksi penghapusan */
+color: white;
+border: none;
+padding: 8px 16px;
+border-radius: 8px;      /* Sudut tumpul agar senada dengan tombol lain */
+font-weight: 600;
+font-size: 0.85rem;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 10px;
+display: inline-block;
+}
+
+/* Efek saat kursor di atas tombol hapus */
+.delete-btn:hover {
+background-color: #d32f2f; /* Merah yang lebih tua */
+box-shadow: 0 4px 8px rgba(255, 82, 82, 0.3);
+transform: translateY(-1px);
+}
+
+/* Efek saat tombol ditekan */
+.delete-btn:active {
+transform: translateY(0);
+}
+
+.checkout-btn:hover { background: #1e3d1a; }
+.continue-btn:hover { background: #f0f7f0; }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from './CartSlice'; // Pastikan path ke CartSlice benar
 
 const plantData = [
   { id: 1, name: "Snake Plant", price: 75000, category: "Pembersih Udara", img: "https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1610074066643-OP8HDJUWUH8T5MHN879K/Snake+Plant.jpg?format=1000w" },
@@ -7,13 +9,30 @@ const plantData = [
   { id: 4, name: "Rosemary", price: 45000, category: "Aromatik", img: "https://growagoodlife.com/wp-content/uploads/2018/06/propagate-rosemary-featured.jpg" },
 ];
 
-const Products = ({ addToCart, cart }) => {
+const Products = () => {
+  const dispatch = useDispatch();
+  
+  // Mengambil data keranjang dari Redux store
+  const cart = useSelector(state => state.cart.items);
+
+  const handleAddToCart = (plant) => {
+    // Dispatch action ke Redux. 
+    // Sesuaikan properti agar pas dengan CartSlice (name, image, cost)
+    dispatch(addItem({
+      name: plant.name,
+      image: plant.img,
+      cost: `Rp ${plant.price.toLocaleString()}`
+    }));
+  };
+
   return (
     <div className="products-container">
       <h2 className="title">Koleksi Tanaman Kami</h2>
       <div className="product-grid">
         {plantData.map(plant => {
-          const inCart = cart.find(item => item.id === plant.id);
+          // Cek apakah tanaman sudah ada di keranjang berdasarkan nama
+          const inCart = cart.find(item => item.name === plant.name);
+          
           return (
             <div key={plant.id} className="product-card">
               <img src={plant.img} alt={plant.name} />
@@ -21,8 +40,8 @@ const Products = ({ addToCart, cart }) => {
               <p className="category">{plant.category}</p>
               <p className="price">Rp {plant.price.toLocaleString()}</p>
               <button 
-                disabled={inCart}
-                onClick={() => addToCart(plant)}
+                disabled={!!inCart}
+                onClick={() => handleAddToCart(plant)}
                 className="btn-add"
               >
                 {inCart ? "Sudah di Keranjang" : "Tambah ke Keranjang"}
