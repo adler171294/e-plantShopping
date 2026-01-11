@@ -10,6 +10,7 @@ const Navbar = ({ setPage, cartCount }) => {
         <button onClick={() => setPage('cart')} className="cart-nav">
           🛒 <span>{cartCount}</span>
         </button>
+        <button onClick={() => setPage('about')}>Tentang Kami</button>
       </div>
     </nav>
   );
