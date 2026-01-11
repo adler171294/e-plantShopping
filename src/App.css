@@ -1,0 +1,241 @@
+:root {
+  --primary: #2d5a27;
+  --secondary: #8eb69b;
+}
+
+/* --- 1. GLOBAL BACKGROUND (Berlaku untuk semua halaman) --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  
+  /* Background image untuk seluruh web */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                    url('https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=2070');
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Gambar tidak ikut ter-scroll */
+  background-repeat: no-repeat;
+}
+h2.title {
+  text-align: center;
+}
+/* --- 2. NAVBAR (Tetap Hijau Terang) --- */
+.navbar {
+  width: 100%;
+  display: flex;
+  background-color: rgb(2, 161, 36);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: black; cursor: pointer; }
+.nav-links button {
+  background: none; 
+  border: none; 
+  margin-left: 1rem; 
+  cursor: pointer; 
+  font-weight: 600;
+  color: white;
+}
+
+/* --- 3. HERO / HOME (Transparan agar background terlihat) --- */
+.hero {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  color: var(--primary);
+}
+
+.hero h1 { font-size: 4rem; margin-bottom: 10px; }
+
+/* --- 4. PRODUCTS PAGE --- */
+/* --- PERBAIKAN GRID PRODUK --- */
+.product-grid {
+  display: grid;
+  /* Menggunakan grid-template-rows: 1fr agar semua kartu dalam satu baris tingginya sama */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  align-items: stretch;
+}
+
+/* --- PERBAIKAN KARTU PRODUK --- */
+.product-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  
+  /* Membuat isi kartu (gambar, teks, tombol) tersusun rapi secara vertikal */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menjaga tombol tetap di paling bawah */
+}
+
+/* --- KUNCI PERBAIKAN GAMBAR --- */
+.product-card img {
+  width: 100%;       /* Memenuhi lebar kartu */
+  height: 250px;     /* WAJIB: Atur tinggi yang sama untuk semua gambar */
+  object-fit: cover; /* WAJIB: Memotong gambar secara proporsional agar tidak gepeng */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tambahan agar teks kategori dan deskripsi tidak berantakan */
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.product-card .category {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* --- 5. MODERN CART DESIGN (DIPERTAHANKAN & DISESUAIKAN) --- */
+.cart-page-wrapper {
+  background: transparent; /* Transparan agar background body muncul */
+  min-height: 100vh;
+  padding: 50px 8%;
+  box-sizing: border-box;
+}
+
+.cart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Agar responsif */
+}
+
+.cart-items-section {
+  flex: 2;
+  min-width: 400px;
+}
+
+.cart-summary-section {
+  flex: 1;
+  min-width: 300px;
+  position: sticky;
+  top: 100px; /* Summary tetap menggantung saat scroll */
+}
+
+.cart-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+/* Item Card di dalam Cart */
+.cart-item-card {
+  background: white; /* Solid putih agar teks jelas */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background: #f0f0f0;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.qty-controls button {
+  background: none; border: none; padding: 5px 15px;
+  font-size: 1.2rem; cursor: pointer; color: var(--primary); font-weight: bold;
+}
+
+/* Summary Card di Kanan */
+.summary-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid #eef2ee;
+}
+
+.summary-row.total {
+  border-top: 2px dashed #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* --- TOMBOL --- */
+.btn-get-started, .btn-add, .btn-checkout-full {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-get-started:hover { background: #1e3d1a; }
+/* Desain Tombol Belanja Sekarang di Keranjang */
+.btn-continue {
+  background-color: var(--primary); /* Menggunakan warna hijau utama */
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;      /* Sudut tumpul agar modern */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animasi halus saat ditekan/hover */
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan tipis */
+}
+
+/* Efek saat kursor diarahkan ke tombol */
+.btn-continue:hover {
+  background-color: #1e3d1a; /* Warna hijau lebih tua saat di-hover */
+  transform: translateY(-2px); /* Tombol sedikit terangkat */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek saat tombol diklik */
+.btn-continue:active {
+  transform: translateY(0);
+}
